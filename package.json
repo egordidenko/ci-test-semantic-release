@@ -1,6 +1,6 @@
 {
   "name": "ci-test-semantic-release",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A test project for semantic-release with automated npm publishing",
   "type": "module",
   "keywords": [
