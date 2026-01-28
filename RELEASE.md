@@ -54,17 +54,17 @@ This commit adds JWT-based authentication for users.
 
 - All commits must be pushed to the `main` branch before triggering a release
 - The workflow requires a GITHUB_TOKEN (automatically provided by GitHub Actions)
-- The workflow requires an NPM_TOKEN secret (must be configured in repository settings) for publishing to npm
+- The workflow requires an NPM_AUTH_TOKEN secret (configured in repository settings) for publishing to npm
 - Releases will only work from the `main` branch
 
 ## NPM Token Setup
 
-To publish to npm, you need to set up an NPM_TOKEN secret:
+To publish to npm, you need to set up an NPM_AUTH_TOKEN secret:
 
 1. Go to npmjs.com and create an access token (Automation or Publish type)
 2. In your GitHub repository, go to Settings → Secrets and variables → Actions
 3. Add a new secret named `NPM_AUTH_TOKEN` with your npm token
-4. The workflow will use this token to authenticate with npm during publishing
+4. The workflow maps this secret to the NPM_TOKEN environment variable used by semantic-release for npm authentication
 
 ## Testing Locally
 

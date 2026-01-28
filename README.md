@@ -2,6 +2,8 @@
 
 A test project demonstrating automated semantic versioning, changelog generation, and npm publishing using semantic-release.
 
+> **Note:** This is a demonstration/test package for CI/CD workflows. It publishes a Vite application build to npm as an example of the automated release process.
+
 ## Features
 
 - ✅ Automated semantic versioning based on conventional commits
