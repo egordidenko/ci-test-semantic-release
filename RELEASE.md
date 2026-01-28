@@ -5,6 +5,7 @@ This repository now has a fully automated release process using semantic-release
 1. Create git tags
 2. Update the CHANGELOG.md file
 3. Create GitHub releases
+4. Publish to npm
 
 ## How to Trigger a Release
 
@@ -23,9 +24,10 @@ When the release workflow runs, it will:
 2. **Generate Release Notes**: Creates release notes from conventional commits
 3. **Update CHANGELOG.md**: Adds the new version and release notes to the changelog
 4. **Update package.json**: Bumps the version number
-5. **Create Git Tag**: Creates a git tag for the new version
-6. **Commit Changes**: Commits the updated CHANGELOG.md, package.json, and package-lock.json with message `chore(release): X.Y.Z [skip ci]`
-7. **Create GitHub Release**: Creates a release in GitHub with the release notes
+5. **Publish to npm**: Publishes the package to npm registry
+6. **Create Git Tag**: Creates a git tag for the new version
+7. **Commit Changes**: Commits the updated CHANGELOG.md, package.json, and package-lock.json with message `chore(release): X.Y.Z [skip ci]`
+8. **Create GitHub Release**: Creates a release in GitHub with the release notes
 
 ## Commit Message Convention
 
@@ -52,7 +54,17 @@ This commit adds JWT-based authentication for users.
 
 - All commits must be pushed to the `main` branch before triggering a release
 - The workflow requires a GITHUB_TOKEN (automatically provided by GitHub Actions)
+- The workflow requires an NPM_TOKEN secret (must be configured in repository settings) for publishing to npm
 - Releases will only work from the `main` branch
+
+## NPM Token Setup
+
+To publish to npm, you need to set up an NPM_TOKEN secret:
+
+1. Go to npmjs.com and create an access token (Automation or Publish type)
+2. In your GitHub repository, go to Settings → Secrets and variables → Actions
+3. Add a new secret named `NPM_AUTH_TOKEN` with your npm token
+4. The workflow will use this token to authenticate with npm during publishing
 
 ## Testing Locally
 

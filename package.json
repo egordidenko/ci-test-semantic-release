@@ -1,15 +1,27 @@
 {
   "name": "ci-test-semantic-release",
-  "private": true,
   "version": "0.0.0",
+  "description": "A test project for semantic-release with automated npm publishing",
   "type": "module",
+  "keywords": [
+    "semantic-release",
+    "vite",
+    "typescript"
+  ],
+  "author": "egordidenko",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/egordidenko/ci-test-semantic-release.git"
   },
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build",
+    "typecheck": "tsc",
     "preview": "vite preview"
   },
   "devDependencies": {
